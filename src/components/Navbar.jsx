@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-
-const NAV_LINKS = [
-  { label: 'Layanan', href: '#layanan' },
-  { label: 'Proses Kami', href: '#proses-kami' },
-  { label: 'Portfolio', href: '#portfolio' },
-]
+import { NAV_LINKS } from '../config/site'
+import Logo from './Logo'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -23,14 +19,12 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0A0A0F]/80 backdrop-blur-lg py-4 border-b border-white/5'
-          : 'bg-transparent py-6'
+          ? 'bg-[#0A0A0F]/80 backdrop-blur-lg py-3 border-b border-white/5'
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-xl font-black tracking-tighter text-white">
-          LUXAVIAN<span className="text-[#FF2D9B]">.</span>STUDIO
-        </a>
+        <Logo />
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center space-x-8">
@@ -55,7 +49,8 @@ export default function Navbar() {
         <button
           className="md:hidden text-white p-1"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Buka menu navigasi"
+          aria-expanded={isOpen}
+          aria-label={isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

@@ -2,10 +2,12 @@ import BackgroundBlobs from './components/BackgroundBlobs'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import TargetClients from './components/TargetClients'
 import Process from './components/Process'
 import Portfolio from './components/Portfolio'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function App() {
   return (
@@ -15,11 +17,13 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <TargetClients />
         <Process />
         <Portfolio />
         <CallToAction />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
